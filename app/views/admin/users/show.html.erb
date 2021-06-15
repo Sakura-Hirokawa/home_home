@@ -1,0 +1,58 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 my-5">
+      <h1 class = "mb-5"><%= @user.name %>さんのユーザ詳細</h2>
+      <p class = "text-success"><%= flash[:success] %></p>
+      <p class = "text-danger"><%= flash[:danger] %></p>
+      <table class = "table table-striped">
+        <tbody>
+          <tr>
+            <th style = "width: 30%">ユーザID</th>
+            <td><%= @user.id %></td>
+          </tr>
+          <tr>
+            <th>名前</th>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th>ユーザステータス</th>
+            <td>
+              <% if @user.is_deleted %>
+                <p class= "text-secondary">退会</p>
+              <% else %>
+                <p class = "text-success">有効</p>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th>自己紹介文</th>
+            <td><%= @user.introduction %></td>
+          </tr>
+          <tr>
+            <th>投稿数</th>
+            <td><%= @user.lists.count %></td>
+          </tr>
+          <tr>
+            <th>フォロー</th>
+            <td><%=  link_to @user.followings.count, admin_user_followings_path(@user) %></td>
+          </tr>
+          <tr>
+            <th>フォロワー</th>
+            <td><%= link_to @user.followers.count, admin_user_followers_path(@user) %></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <%= link_to "編集する", edit_admin_user_path(@user), class: "btn btn-success col-2 mr-3" %>
+              <%= link_to "投稿一覧", admin_list_path(@user), class: "btn btn-secondary col-2" %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

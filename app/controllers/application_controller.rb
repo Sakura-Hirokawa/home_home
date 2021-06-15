@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
     if resource.class.name == "Admin"
       flash[:success] = "おつかれさまです！ログインしました"
       admin_root_path
-    # else
-    #   flash[:success] = "おつかれさまです！ログインしました"
-    #   mypage_path(current_user)
+    else
+      flash[:success] = "おつかれさまです！ログインしました"
+      mypage_path(current_user)
     end
   end
   
