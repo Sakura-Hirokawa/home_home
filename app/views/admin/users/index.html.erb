@@ -1,0 +1,11 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 my-5">
+      <h1 class = "mb-5">ユーザ一覧</h1>
+      <!--検索-->
+      <%= render 'admin/searches/search-form' %>
+      <!--ユーザ一覧-->
+      <%= render 'admin/users/index', users: @users %>
+    </div>
+  </div>
+</div>
