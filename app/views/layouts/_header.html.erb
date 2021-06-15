@@ -14,6 +14,7 @@
             <li class = "nav-text pr-5"><%= current_user.name %>さん、今日もえらい！</li>
             <li><%= link_to "Mypage", mypage_path(current_user), class: "fas fa-home nav-link px-3" %></li>
             <li><%= link_to "List", lists_path, class: "fas fa-list nav-link" %></li>
+            <li><%= link_to "Calendar", my_calendar_path(current_user), class: "fas fa-calendar-alt nav-link px-3" %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link" %></li>
           <% elsif admin_signed_in? %>
             <li><%= link_to "Users", admin_users_path, class: "fas fa-users nav-link pr-3" %></li>
