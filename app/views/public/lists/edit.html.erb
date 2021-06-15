@@ -1,0 +1,37 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 my-5">
+      <h1 class = "mb-5">投稿編集</h1>
+      <%= render 'layouts/errors', obj: @list %>
+      <table class = "table table-striped mx-auto">
+        <tbody>
+          <%= form_with model: @list, local:true do |f| %>
+          <tr>
+            <th><%= f.label :日付選択 %></th>
+            <td><%= f.date_field :date %></td>
+          </tr>
+          <tr>
+            <th><%= f.label:ひとつめ %></th>
+            <td><%= f.text_area :first_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label:ふたつめ %></th>
+            <td><%= f.text_area :second_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label:みっつめ %></th>
+            <td><%= f.text_area :third_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <%= f.submit "変更内容を保存", class: "btn btn-primary col-2 mr-3" %>
+              <%= link_to "キャンセル", list_path(@list), class: "btn btn-outline-info col-2" %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
