@@ -9,4 +9,13 @@ Rails.application.routes.draw do
     registrations: "public/registrations"
   }
   
+  namespace :admin do
+    root "homes#top"
+  end
+  
+  scope module: :public do
+    root "homes#top"
+    get "/about" => "homes#about"
+  end
+  
 end
