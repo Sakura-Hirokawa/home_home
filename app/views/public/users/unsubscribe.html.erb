@@ -1,0 +1,12 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 my-5 text-center">
+      <h1>本当に退会しますか？</h1>
+      <p class = "my-5">退会すると、これまでのリストやカレンダーが閲覧できなくなります。<br />
+        退会する場合は、「退会する」をクリックしてください。
+      </p>
+      <%= link_to "退会しない", mypage_path(current_user), class: "btn btn-info mr-5" %>
+      <%= link_to "退会する", withdraw_path(@user), method: :patch, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
