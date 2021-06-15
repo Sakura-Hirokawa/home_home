@@ -1,0 +1,22 @@
+<h3 class = "offset-sm-1 mt-5">Comments <i class="far fa-comment"><%= list.list_comments.count %></i></h3>
+  <table class = "table table-hover col-sm-10 mx-auto">
+    <tbody>
+      <% list.list_comments.each do |list_comment| %>
+      <tr>
+        <td>
+          <%= link_to admin_user_path(list_comment.user) do %>
+            <%= attachment_image_tag list_comment.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50", class: "mr-3" %>
+            <%= list_comment.user.name %>
+          <% end %>
+        </td>
+        <td style = "width: 65%">
+          <%= list_comment.comment %><br />
+          <%= list_comment.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+        </td>
+        <td class = "align-middle">
+          <%= link_to "削除", admin_list_list_comment_path(list_comment.list_id, list_comment.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
