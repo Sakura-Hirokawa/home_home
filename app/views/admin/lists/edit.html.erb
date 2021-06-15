@@ -1,0 +1,39 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 my-5">
+      <h1 class = "mb-5"><%= @user.name %>さんの投稿詳細・編集</h1>
+      <table class = "table text-center">
+        <thead>
+          <tr>
+            <th style = "width: 30%">User</th>
+            <th class = "text-left">投稿</th>
+            <th>ほめホメ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class = "align-middle">
+              <%= attachment_image_tag @list.user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", size: "100x100" %>
+              <h3 class = "m-3"><%= @list.user.name %></h3>
+            </td>
+            <td class = "list text-left">
+              <%= @list.date.strftime('%Y/%m/%d') %><br />
+              <%= @list.first_item %><br />
+              <%= @list.second_item %><br />
+              <%= @list.third_item %>
+            </td>
+            <td>
+              <i class="fas fa-star"><%= @list.favorites.count %></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class = "text-center my-5">
+        <%= link_to "削除", admin_list_path(@list), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-2" %>
+      </div>
+      <div class = "comments">
+        <%= render 'admin/list_comments/comments', list: @list %>
+      </div>
+    </div>
+  </div>
+</div>
