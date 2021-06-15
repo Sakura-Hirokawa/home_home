@@ -1,0 +1,42 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 my-5">
+      <h1 class = "mb-5">スケジュール管理</h1>
+      <p class = "text-success"><%= flash[:success] %></p>
+      <p class = "text-primary"><%= flash[:primary] %></p>
+      <!--イベント登録-->
+      <table class = "table table-striped mb-5">
+        <tbody>
+          <tr>
+            <th>スケジュール名</th>
+            <td><%= @event.title %></td>
+          </tr>
+          <tr>
+            <th>スケジュール内容</th>
+            <td><%= @event.description %></td>
+          </tr>
+          <tr>
+            <th>開始日時</th>
+            <td><%= @event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
+          </tr>
+          <tr>
+            <th>終了日時</th>
+            <td><%= @event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <%if @event.user == current_user %>
+                <%= link_to "戻る", my_calendar_path(current_user), class: "btn btn-outline-info col-2" %>
+                <%= link_to "編集", edit_event_path(@event), class: "btn btn-success col-2 mx-3" %>
+                <%= link_to "削除", event_path(@event), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-2" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--カレンダー-->
+      <div id = "calendar"></div>
+    </div>
+  </div>
+</div>
