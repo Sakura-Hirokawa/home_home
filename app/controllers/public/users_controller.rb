@@ -4,7 +4,7 @@ class Public::UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update]
 
   def show
-    @lists = @user.lists.order("created_at DESC")
+    @lists = @user.lists.page(params[:page]).reverse_order
   end
   
   def edit

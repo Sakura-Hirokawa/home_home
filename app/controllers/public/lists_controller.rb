@@ -7,7 +7,7 @@ class Public::ListsController < ApplicationController
   end
 
   def index
-    @lists = List.all.order("created_at DESC")
+    @lists = List.page(params[:page]).reverse_order
   end
 
   def create

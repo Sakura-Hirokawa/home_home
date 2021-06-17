@@ -46,12 +46,12 @@
           </tr>
         </tbody>
       </table>
-      
+
       <!--該当ユーザ投稿一覧-->
       <%= render 'public/lists/index', lists: @lists %>
-      
       <!--新規投稿画面へ-->
       <%= render 'public/lists/new-link' %>
+      <%= paginate @lists %>
     </div>
   </div>
 </div>
