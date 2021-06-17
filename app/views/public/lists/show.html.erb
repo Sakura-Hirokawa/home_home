@@ -47,12 +47,14 @@
           <%= render 'public/favorites/favorite-btn', list: @list %>
         </div>
 
-      <!--コメント-->
-      <p class = "offset-sm-1 text-danger"><%= flash[:danger] %></p>
-      <%= render 'public/list_comments/comments', list: @list %>
-
+      <!--コメント-->>
+      <div class = "list_comments">
+        <%= render 'public/list_comments/comments', list: @list %>
+      </div>
+      
+      <!--コメントフォーム-->
       <div class = "offset-sm-1 text-center mt-5">
-        <%= form_with model:[@list, @list_comment], local:true do |f| %>
+        <%= form_with model:[@list, @list_comment] do |f| %>
           <%= f.text_area :comment, placeholder: "頑張ったユーザを褒めましょう", size: "50x5" %>
           <%= f.submit "送信", class: "btn btn-primary" %>
         <% end %>
