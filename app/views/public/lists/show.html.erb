@@ -8,6 +8,7 @@
           <tr>
             <th class = "text-center", style = "width: 30%">User</th>
             <th>List</th>
+            <th class = "text-center">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +24,13 @@
               ・<%= @list.first_item %><br />
               ・<%= @list.second_item %><br />
               ・<%= @list.third_item %>
+            </td>
+            <td class = "text-center align-middle">
+              <% if @list.done %>
+                <p class = "btn btn-warning">達成</p>
+              <% else %>
+                <p class = "btn btn-outline-success">実行中</p>
+              <% end %>
             </td>
           </tr>
         </tbody>
