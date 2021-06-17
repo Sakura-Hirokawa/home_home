@@ -43,7 +43,9 @@
       </div>
 
       <!--いいね-->
-      <%= render 'public/favorites/favorite-btn', list: @list %>
+        <div class = "favorite-btn">
+          <%= render 'public/favorites/favorite-btn', list: @list %>
+        </div>
 
       <!--コメント-->
       <p class = "offset-sm-1 text-danger"><%= flash[:danger] %></p>
