@@ -23,6 +23,13 @@
             <td><%= f.text_area :third_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
           </tr>
           <tr>
+            <th>Status</th>
+              <td>
+                <%= f.radio_button :done, :false %>実行中
+                <%= f.radio_button :done, :true %>達成
+              </td>
+            </tr>
+          <tr>
             <th></th>
             <td><%= f.submit "今日もがんばった！", class: "btn btn-primary" %></td>
           </tr>
