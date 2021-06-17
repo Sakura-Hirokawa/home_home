@@ -16,11 +16,11 @@
           </tr>
           <tr>
             <th><%= f.label :開始日時 %></th>
-            <td><%= f.datetime_select :start_at, {}, class: "form-control datetime-form" %></td>
+            <td><%= f.datetime_field :start_at, class: "form-control" %></td>
           </tr>
           <tr>
             <th><%= f.label :終了日時 %></th>
-            <td><%= f.datetime_select :end_at, {}, class: "form-control datetime-form" %></td>
+            <td><%= f.datetime_field :end_at, class: "form-control" %></td>
           </tr>
           <tr>
             <th></th>
