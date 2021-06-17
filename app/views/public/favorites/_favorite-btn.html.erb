@@ -1,6 +1,10 @@
 <div class = "text-center pb-5">
   <% if list.favorited_by?(current_user) %>
-    <h3><%= link_to "おつかれさまです！えらい！", list_favorites_path(list), method: :delete, class: "far fa-laugh-squint" %></h3>
+    <% if list.user == current_user %>
+      <h3><%= link_to "おつかれさまです！えらい！", list_favorites_path(list), method: :delete, class: "far fa-laugh-squint" %></h3>
+    <% else %>
+      <h3><%= link_to "褒め上手ですね！すごい！", list_favorites_path(list), method: :delete, class: "far fa-smile-wink" %></h3>
+    <% end %>
   <% else %>
     <%= link_to "ほめホメボタン", list_favorites_path(list), method: :post, class: "fas fa-star btn btn-outline-warning btn-lg" %>
   <% end %>
