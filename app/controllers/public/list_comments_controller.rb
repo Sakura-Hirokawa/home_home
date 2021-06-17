@@ -7,13 +7,12 @@ class Public::ListCommentsController < ApplicationController
     @list_comment.list_id = @list.id
     @list_comment.user_id = current_user.id
     @list_comment.save
-    redirect_to list_path(@list)
   end
 
   def destroy
-    ListComment.find_by(id: params[:id], list_id: params[:list_id]).destroy
-    flash[:danger] = "コメントを削除しました"
-    redirect_to list_path(params[:list_id])
+    @list = List.find(params[:list_id])
+    list_comment = @list.list_comments.find(params[:id])
+    list_comment.destroy
   end
 
   private
