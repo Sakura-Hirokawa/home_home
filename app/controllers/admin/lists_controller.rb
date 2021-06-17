@@ -2,7 +2,7 @@ class Admin::ListsController < ApplicationController
   before_action :authenticate_admin!
 
   def show
-    @list = List.all
+    @lists = List.all
     @user = User.find(params[:id])
   end
 
