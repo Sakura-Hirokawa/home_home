@@ -47,11 +47,16 @@ class Public::ListsController < ApplicationController
     flash[:danger] = "リストを削除しました"
     redirect_to lists_path
   end
+  
+  def done
+    @list.update(done: true)
+    redirect_to list_path(@list)
+  end
 
   private
 
   def list_params
-    params.require(:list).permit(:first_item, :second_item, :third_item, :date)
+    params.require(:list).permit(:first_item, :second_item, :third_item, :date, :done)
   end
 
   def set_list

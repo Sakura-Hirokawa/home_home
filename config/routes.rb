@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     get "/mypage/:id" => "users#show", as: "mypage"
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"
     patch "/users/:id/withdraw" => "users#withdraw", as: "withdraw"
+    get "/lists/done" => "lists#done", as: "done"
     resources :events, only:[:new, :create, :index, :show, :edit, :update, :destroy]
     resources :users, only:[:edit, :update] do
       resource :relationships, only:[:create, :destroy]
