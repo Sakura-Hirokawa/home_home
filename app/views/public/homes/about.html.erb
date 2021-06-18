@@ -1,7 +1,66 @@
-<div class = "container">
-  <div class = "row">
-    <div class = "col-sm-12">
-      <h1>aboutページ</h1>
+<div class = "about">
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-sm-12 my-5">
+        <!--What is?-->
+        <div class = "d-flex">
+          <%= image_tag 'logo.png' %>
+          <div class = "text-center mx-auto">
+            <%= image_tag 'what.png', size: "500x130", class: "my-3" %>
+              <h5 class = "what mt-5">
+                ほめホメ(home home)とは、<br />
+                その日<strong>達成したいこと</strong>や<strong>頑張りたいこと</strong>などの<br />
+                目標を共有しあい、<br />
+                達成できたときに<br />
+                ユーザみんなで<strong>褒め合う</strong>ことのできるサイトです。
+              </h5>
+          </div>
+        </div>
+
+        <!--howto1-->
+        <div class = "d-flex my-5">
+          <div class = "text-center mx-auto">
+            <%= image_tag 'howto.png', size: "500x130", class: "mt-5" %>
+              <h5 class = "how mt-5">
+                <strong>1.日付を指定して、その日の目標を3つ投稿しましょう</strong><br />
+                目標は1つでも、簡単なことでも構いません。
+              </h5>
+          </div>
+          <%= image_tag 'image1.jpg', size: "500x500" %>
+        </div>
+
+         <!--howto2-->
+        <div class = "d-flex my-5">
+          <%= image_tag 'image2.png' %>
+          <h5 class = "how text-center m-auto">
+            <strong>2.自分が投稿した目標が達成できたら達成に変更！</strong><br />
+            投稿一覧のStatusが実行中から達成に更新されます。
+          </h5>
+        </div>
+
+         <!--howto3-->
+        <div class = "d-flex my-5">
+          <h5 class = "how text-center m-auto">
+            <strong>3.みんなで褒め合いましょう</strong><br />
+            Statusが達成になると他のユーザがあなたを褒めてくれます！<br />
+            他のユーザのStatusが達成になっているときは、<br />
+            ほめホメボタンやコメントを利用して<br />
+            積極的に褒めにいきましょう！
+          </h5>
+          <%= image_tag 'image3.jpg', size: "500x500" %>
+        </div>
+
+         <!--howto4-->
+        <div class = "d-flex my-5">
+          <%= image_tag 'image4.jpg', size: "500x500" %>
+          <h5 class = "how text-center m-auto">
+            <strong>4.マイカレンダーでスケジュール管理をしてみましょう</strong><br />
+            マイカレンダーを見ながら目標を考えることで、<br />
+            より明確な目標が立てやすくなっています。<br />
+            マイカレンダーは日記として活用しても構いません。
+          </h5>
+        </div>
+      </div>
     </div>
   </div>
 </div>
