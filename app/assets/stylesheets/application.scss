@@ -18,14 +18,18 @@
   @import 'font-awesome-sprockets';
   @import 'font-awesome';
 
-  * {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
  }
 
  header {
-  background-color: #6EC7E2;
+  background-color: #FDFDFB;
+ }
+
+ .header-lign {
+  width: 100%;
  }
 
  .nav-link {
@@ -37,9 +41,13 @@
   line-height: 100px;
   background-color: #6EC7E2;
  }
+ 
+ main {
+  background-color: #FDFDFB;
+ }
 
  .top {
-  background-color: #F9E900;
+  // background-color: #F9E900;
   text-align: center;
  }
 
@@ -52,6 +60,12 @@
   text-align: center;
  }
 
+ // アバウト画面whatis?
+ .what,
+ .how {
+  line-height: 40px;
+ }
+ 
  .profile_image {
   border-radius: 50%;
  }
@@ -71,7 +85,7 @@
  .favorite-btn {
   color: #F9E900;
  }
- 
+
  // #table tr:hover td {
  //  background-color: #ACDEF7;
  // }
