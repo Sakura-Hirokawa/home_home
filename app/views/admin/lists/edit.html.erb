@@ -37,10 +37,9 @@
         </tbody>
       </table>
       <div class = "text-center my-5">
-       
         <%= link_to "削除", admin_list_path(@list), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-2" %>
       </div>
-      <div class = "comments">
+      <div class = "admin_comments">
         <%= render 'admin/list_comments/comments', list: @list %>
       </div>
     </div>
