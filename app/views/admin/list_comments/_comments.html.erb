@@ -14,7 +14,7 @@
           <%= list_comment.created_at.strftime('%Y/%m/%d %H:%M') %></p>
         </td>
         <td class = "align-middle">
-          <%= link_to "削除", admin_list_list_comment_path(list_comment.list_id, list_comment.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
+          <%= link_to "削除", admin_list_list_comment_path(list_comment.list_id, list_comment.id), method: :delete, remote: true, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
         </td>
       </tr>
       <% end %>
