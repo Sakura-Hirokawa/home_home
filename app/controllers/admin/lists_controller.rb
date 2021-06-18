@@ -3,7 +3,7 @@ class Admin::ListsController < ApplicationController
   before_action :set_list, only:[:edit, :update, :destroy]
 
   def show
-    @lists = List.all
+    @lists = List.page(params[:page]).reverse_order
     @user = User.find(params[:id])
   end
 
