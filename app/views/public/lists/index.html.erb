@@ -9,6 +9,7 @@
       <%= render 'public/lists/index', lists: @lists %>
       <!--新規投稿画面へ-->
       <%= render 'public/lists/new-link' %>
+      <%= paginate @lists %>
     </div>
   </div>
 </div>

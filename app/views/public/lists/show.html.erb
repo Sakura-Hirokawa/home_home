@@ -8,6 +8,7 @@
           <tr>
             <th class = "text-center", style = "width: 30%">User</th>
             <th>List</th>
+            <th class = "text-center">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,13 @@
               ・<%= @list.second_item %><br />
               ・<%= @list.third_item %>
             </td>
+            <td class = "text-center align-middle">
+              <% if @list.done %>
+                <p class = "btn btn-warning">達成</p>
+              <% else %>
+                <p class = "btn btn-outline-success">実行中</p>
+              <% end %>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -35,14 +43,18 @@
       </div>
 
       <!--いいね-->
-      <%= render 'public/favorites/favorite-btn', list: @list %>
+        <div class = "favorite-btn">
+          <%= render 'public/favorites/favorite-btn', list: @list %>
+        </div>
 
-      <!--コメント-->
-      <p class = "offset-sm-1 text-danger"><%= flash[:danger] %></p>
-      <%= render 'public/list_comments/comments', list: @list %>
-
+      <!--コメント-->>
+      <div class = "list_comments">
+        <%= render 'public/list_comments/comments', list: @list %>
+      </div>
+      
+      <!--コメントフォーム-->
       <div class = "offset-sm-1 text-center mt-5">
-        <%= form_with model:[@list, @list_comment], local:true do |f| %>
+        <%= form_with model:[@list, @list_comment] do |f| %>
           <%= f.text_area :comment, placeholder: "頑張ったユーザを褒めましょう", size: "50x5" %>
           <%= f.submit "送信", class: "btn btn-primary" %>
         <% end %>

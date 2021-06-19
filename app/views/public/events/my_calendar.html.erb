@@ -3,9 +3,9 @@
     <div class = "col-sm-12 my-5">
       <h1 class = "mb-5">マイカレンダー</h1>
       <p class = "text-danger"><%= flash[:danger] %></p>
-      <%= link_to "スケジュール登録", new_event_path, class: "btn btn-outline-success btn-lg mb-5 " %>
+      <%= link_to "スケジュール登録", new_event_path, class: "btn btn-outline-success btn-lg mb-5" %>
       <!--カレンダー-->
-      <div id="calendar"></div>
+      <div id = "calendar"></div>
       <!--新規投稿画面へ-->
       <%= render 'public/lists/new-link' %>
     </div>

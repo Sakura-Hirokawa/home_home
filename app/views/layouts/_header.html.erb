@@ -1,10 +1,7 @@
 <header>
   <nav class = "navbar navbar-expand-xl">
     <div class = "container">
-      <%= image_tag ("logo1.png"), size: "100x100" %>
-      <%= image_tag ("logo2.png"), size: "100x100" %>
-      <%= image_tag ("logo3.png"), size: "100x100" %>
-      <%= image_tag ("logo4.png"), size: "100x100" %>
+      
       <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarSupportedContent" aria-controls = "navbarSupportedContent" aria-expanded = "false" aria-label = "Toggle navigation">
         <span class = "navbar-toggler-icon"></span>
       </button>
@@ -20,8 +17,8 @@
             <li><%= link_to "Users", admin_users_path, class: "fas fa-users nav-link pr-3" %></li>
             <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link" %></li>
           <% else %>
-            <li><%= link_to "Top", root_path, class: "fas fa-home nav-link" %></li>
-            <li><%= link_to "ほめホメとは", about_path, class: "fas fa-question nav-link px-3" %></li>
+            <li><%= link_to "Top", root_path, class: "fas fa-home nav-link", data: {"turbolinks" => false} %></li>
+            <li><%= link_to "About", about_path, class: "fas fa-question nav-link px-3" %></li>
             <li><%= link_to "Sign up", new_user_registration_path, class: "fas fa-user-plus nav-link" %></li>
             <li><%= link_to "Login", new_user_session_path, class: "fas fa-sign-in-alt nav-link pl-3" %></li>
           <% end %>
