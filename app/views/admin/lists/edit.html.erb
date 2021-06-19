@@ -5,8 +5,9 @@
       <table class = "table text-center">
         <thead>
           <tr>
-            <th style = "width: 30%">User</th>
+            <th style = "width: 30%">ユーザ</th>
             <th class = "text-left">投稿</th>
+            <th>ステータス</th>
             <th>ほめホメ</th>
           </tr>
         </thead>
@@ -22,7 +23,14 @@
               <%= @list.second_item %><br />
               <%= @list.third_item %>
             </td>
-            <td>
+            <td class = "align-middle pt-4">
+              <% if @list.done %>
+                <p class = "btn btn-warning">達成</p>
+              <% else %>
+                <p class = "btn btn-outline-success">実行中</p>
+              <% end %>
+            </td>
+            <td class = "align-middle">
               <i class="fas fa-star"><%= @list.favorites.count %></i>
             </td>
           </tr>
@@ -31,7 +39,7 @@
       <div class = "text-center my-5">
         <%= link_to "削除", admin_list_path(@list), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-2" %>
       </div>
-      <div class = "comments">
+      <div class = "admin_comments">
         <%= render 'admin/list_comments/comments', list: @list %>
       </div>
     </div>

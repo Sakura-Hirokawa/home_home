@@ -18,14 +18,14 @@
   @import 'font-awesome-sprockets';
   @import 'font-awesome';
 
-  * {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
  }
 
  header {
-  background-color: #6EC7E2;
+  background-color: #FDFDFB;
  }
 
  .nav-link {
@@ -38,18 +38,64 @@
   background-color: #6EC7E2;
  }
 
+ main {
+  background-color: #FDFDFB;
+ }
+
  .top {
-  background-color: #F9E900;
   text-align: center;
  }
 
+ .text-box {
+  position: relative;
+ }
+
  .top-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  z-index: 9999;
+  height: 100px;
   line-height: 50px;
+  color : #FDFDFB;
+ }
+
+ .home_font {
+  font-family: cursive, sans-serif;
+ }
+
+ // トップスライドショー
+ #container{
+  height: 500px;
+ }
+
+ .top1 {
+  background-image: url(top1.jpg);
+ }
+ .top2 {
+  background-image: url(top2.jpg);
+ }
+ .top3 {
+  background-image: url(top3.jpg);
+ }
+ .top4 {
+  background-image: url(top4.jpg);
+ }
+ .top5 {
+  background-image: url(top5.jpg);
  }
 
  .admin_top {
   background-color: #F3ADCB;
   text-align: center;
+ }
+
+ // アバウト画面whatis?
+ .what,
+ .how {
+  line-height: 40px;
  }
 
  .profile_image {
@@ -67,8 +113,11 @@
   line-height: 40px;
  }
 
- // スケジュール登録
- .datetime-form {
-  display: inline-block;
-  width: auto;
+ // 投稿一覧のほめホメカウント
+ .favorite-btn {
+  color: #F9E900;
  }
+
+ // #table tr:hover td {
+ //  background-color: #ACDEF7;
+ // }
