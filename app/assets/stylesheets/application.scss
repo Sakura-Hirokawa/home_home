@@ -23,25 +23,60 @@
   padding: 0;
   box-sizing: border-box;
  }
-
+ 
+ // フォント
+ header,
+ main,
+ footer {
+  font-family: cursive, sans-serif;
+ }
+ 
+ a:hover {
+  text-decoration: none;
+ }
+ 
+ // ヘッダー
  header {
-  background-color: #FDFDFB;
+  background: -moz-linear-gradient(top, #FFC778, #FFF);
+  background: -webkit-linear-gradient(top, #FFC778, #FFF);
+  background: linear-gradient(to bottom, #FFC778, #FFF);
  }
 
+ // ヘッダーリンク
  .nav-link {
+  color: #E84566;
+  font-size: 16px;
+  outline: 1px solid;
+  outline-color: #E84566;
+  outline-offset: 0px;
+  transition: .3s;
+ }
+
+ .nav-link:hover {
+  animation: light .8s infinite;
   color: #E84566;
  }
 
+ @keyframes light {
+  100% {
+   outline-color: transparent;
+   outline-offset: 12px;
+  }
+ }
+
+ // フッター
  footer {
-  height: 100px;
   line-height: 100px;
-  background-color: #6EC7E2;
+  background: -moz-linear-gradient(bottom, #FFC778, #FFF);
+  background: -webkit-linear-gradient(bottom, #FFC778, #FFF);
+  background: linear-gradient(to top, #FFC778, #FFF);
  }
 
  main {
   background-color: #FDFDFB;
  }
 
+ // トップ画面
  .top {
   text-align: center;
  }
@@ -60,10 +95,6 @@
   height: 100px;
   line-height: 50px;
   color : #FDFDFB;
- }
-
- .home_font {
-  font-family: cursive, sans-serif;
  }
 
  // トップスライドショー
@@ -87,15 +118,48 @@
   background-image: url(top5.jpg);
  }
 
+ // 管理者トップ画面
  .admin_top {
   background-color: #F3ADCB;
   text-align: center;
  }
 
- // アバウト画面whatis?
+ // アバウト画面
+ .img_wrap{
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  overflow: hidden;
+ }
+
+ .img_wrap img{
+  cursor: pointer;
+  transition-duration: 0.5s;
+ }
+
+ .img_wrap img:hover{
+  transform: scale(1.2) rotate(9deg);
+  transition-duration: 0.5s;
+ }
+
+ // アバウト行間
  .what,
  .how {
   line-height: 40px;
+ }
+
+ // How to use 見出し
+ .how > h5 {
+  border-bottom: solid 3px skyblue;
+  position: relative;
+ }
+
+ .how h5:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffc778;
+  bottom: -3px;
+  width: 30%;
  }
 
  .profile_image {
@@ -117,7 +181,54 @@
  .favorite-btn {
   color: #F9E900;
  }
+ 
+ // ほめホメボタン
+ .btn-circle {
+  display: inline-block;
+  text-decoration: none;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  font-size: 23px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  transition: .3s;
+  color: red;
+  background-image: linear-gradient(#aeecff 0%, #57c8ff 100%);
+ }
 
+ .btn-circle:hover {
+  color: red;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+ }
+ 
+ .btn-beat {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  background: #333;
+  padding: 18px 30px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: .3s;
+ }
+ 
+ .btn-beat:hover {
+  animation: pulsation .7s alternate infinite;
+ }
+
+ @keyframes pulsation {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+  100% { transform: scale(1.1); }
+ }
+ 
  // #table tr:hover td {
  //  background-color: #ACDEF7;
  // }
