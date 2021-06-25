@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class Admin::SearchesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do

@@ -1,6 +1,6 @@
 class Public::ListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_list, only:[:show, :edit, :update, :destroy]
+  before_action :set_list, only: %i[show edit update destroy]
 
   def new
     @list = List.new
@@ -17,7 +17,7 @@ class Public::ListsController < ApplicationController
       redirect_to list_path(@list)
     else
       @lists = List.all
-      render 'new'
+      render "new"
     end
   end
 
@@ -27,7 +27,7 @@ class Public::ListsController < ApplicationController
 
   def edit
     if @list.user == current_user
-      render 'edit'
+      render "edit"
     else
       redirect_to lists_path
     end
@@ -38,7 +38,7 @@ class Public::ListsController < ApplicationController
       flash[:primary] = "リストを更新しました"
       redirect_to list_path(@list)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -47,7 +47,7 @@ class Public::ListsController < ApplicationController
     flash[:danger] = "リストを削除しました"
     redirect_to lists_path
   end
-  
+
   def done
     @list.update(done: true)
     redirect_to list_path(@list)

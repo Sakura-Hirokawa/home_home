@@ -1,0 +1,3 @@
+# 追加した規約ファイル読込
+require:
+  - rubocop-rails
