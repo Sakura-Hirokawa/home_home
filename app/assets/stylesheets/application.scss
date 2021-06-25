@@ -42,6 +42,7 @@
   background-color: #FDFDFB;
  }
 
+ // トップ画面
  .top {
   text-align: center;
  }
@@ -62,6 +63,7 @@
   color : #FDFDFB;
  }
 
+ // トップ画面スライドショーフォント
  .home_font {
   font-family: cursive, sans-serif;
  }
@@ -87,15 +89,31 @@
   background-image: url(top5.jpg);
  }
 
+ // 管理者トップ画面
  .admin_top {
   background-color: #F3ADCB;
   text-align: center;
  }
 
- // アバウト画面whatis?
+ // アバウト画面
  .what,
  .how {
   line-height: 40px;
+ }
+ 
+ // How to use 見出し
+ .how > h5 {
+  border-bottom: solid 3px skyblue;
+  position: relative;
+ }
+ 
+ .how h5:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffc778;
+  bottom: -3px;
+  width: 30%;
  }
 
  .profile_image {
