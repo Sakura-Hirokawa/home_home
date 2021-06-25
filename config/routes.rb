@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     root "homes#top"
     get "/about" => "homes#about"
     get "/search" => "searches#search", as: "search"
-    get "/my_calendar" => "events#my_calendar", as: "my_calendar"
+    get "/my_calendar/:id" => "events#my_calendar", as: "my_calendar"
     get "/mypage/:id" => "users#show", as: "mypage"
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"
     patch "/users/:id/withdraw" => "users#withdraw", as: "withdraw"

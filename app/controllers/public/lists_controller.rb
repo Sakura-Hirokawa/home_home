@@ -14,6 +14,7 @@ class Public::ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user_id = current_user.id
     if @list.save
+      flash[:success] = "リストを投稿しました"
       redirect_to list_path(@list)
     else
       @lists = List.all
