@@ -54,4 +54,8 @@ Layout/LineLength:
   Exclude:
     - "db/migrate/*.rb"
 
-e
+################### Rails ##################################
+
+#unique index
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
