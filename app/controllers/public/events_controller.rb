@@ -1,6 +1,6 @@
 class Public::EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_event, only:[:show, :edit, :update, :destroy]
+  before_action :set_event, only: %i[show edit update destroy]
 
   def new
     @event = Event.new
@@ -17,17 +17,14 @@ class Public::EventsController < ApplicationController
       flash[:success] = "スケジュールを登録しました"
       redirect_to event_path(@event)
     else
-      render 'new'
+      render "new"
     end
   end
 
-  def show
-  end
+  def show; end
 
   def edit
-    unless @event.user == current_user
-      redirect_to root_path
-    end
+    redirect_to root_path unless @event.user == current_user
   end
 
   def update
@@ -35,7 +32,7 @@ class Public::EventsController < ApplicationController
       flash[:primary] = "スケジュールを更新しました"
       redirect_to event_path(@event)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -45,8 +42,7 @@ class Public::EventsController < ApplicationController
     redirect_to my_calendar_path
   end
 
-  def my_calendar
-  end
+  def my_calendar; end
 
   private
 

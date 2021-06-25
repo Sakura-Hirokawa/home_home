@@ -8,5 +8,5 @@ class List < ApplicationRecord
   end
 
   validates :date, presence: true
-  validates :first_item, presence: true, length: {maximum: 200}
+  validates :first_item, presence: true, length: { maximum: 200 }
 end

@@ -6,10 +6,8 @@ class Admin::SearchesController < ApplicationController
     @model = params[:model]
     # 検索ワード
     @content = params[:content]
-    #検索手法
+    # 検索手法
     @method = params[:method]
-    if @model == "user"
-      @records = User.search_for(@content, @method)
-    end
+    @records = User.search_for(@content, @method) if @model == "user"
   end
 end
