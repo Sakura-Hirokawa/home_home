@@ -24,9 +24,9 @@
       </td>
       <td class = "align-middle pt-4">
         <% if list.done %>
-          <p class = "btn btn-warning">達成</p>
+          <%= image_tag 'achieved.png' , size: "80x80" %>
         <% else %>
-          <p class = "btn btn-outline-success">実行中</p>
+          <%= image_tag 'run.png', size: "80x80" %>
         <% end %>
       </td>
       <td class = "align-middle">
