@@ -28,7 +28,7 @@
  header,
  main,
  footer {
-  font-family: cursive, sans-serif;
+  font-family: cursive, YuGothic, sans-serif;
  }
 
  a:hover {
@@ -170,6 +170,10 @@
   position: fixed;
   right: 40px;
   top: 150px;
+ }
+
+ .new_list_img {
+  border-radius: 50%;
  }
 
  // 投稿詳細の項目の行間
