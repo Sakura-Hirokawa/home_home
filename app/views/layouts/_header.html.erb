@@ -1,29 +1,29 @@
 <header>
   <nav class = "navbar navbar-expand-xl">
     <div class = "container">
-
       <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarSupportedContent" aria-controls = "navbarSupportedContent" aria-expanded = "false" aria-label = "Toggle navigation">
         <span class = "navbar-toggler-icon"></span>
       </button>
       <div class = "collapse navbar-collapse" id = "navbarNavDropdown">
         <ul class = "navbar-nav ml-auto my-3">
           <% if user_signed_in? %>
-            <li class = "nav-text pr-5"><%= current_user.name %>さん、今日もえらい！</li>
-            <li><%= link_to "Mypage", mypage_path(current_user), class: "fas fa-home nav-link px-3" %></li>
-            <li><%= link_to "List", lists_path, class: "fas fa-list nav-link" %></li>
-            <li><%= link_to "Calendar", my_calendar_path(current_user), class: "fas fa-calendar-alt nav-link px-3" %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link" %></li>
+            <li class = "nav-text pt-2 pr-5"><%= current_user.name %>さん、今日もえらい！</li>
+            <li><%= link_to "Mypage", mypage_path(current_user), class: "nav-link px-4" %></li>
+            <li><%= link_to "List", lists_path, class: "nav-link px-4 mx-5" %></li>
+            <li><%= link_to "Calendar", my_calendar_path(current_user), class: "nav-link px-4" %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link px-4 ml-5" %></li>
           <% elsif admin_signed_in? %>
-            <li><%= link_to "Users", admin_users_path, class: "fas fa-users nav-link pr-3" %></li>
-            <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link" %></li>
+            <li><%= link_to "Users", admin_users_path, class: "nav-link px-4" %></li>
+            <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "nav-link px-4 ml-5" %></li>
           <% else %>
-            <li><%= link_to "Top", root_path, class: "fas fa-home nav-link", data: {"turbolinks" => false} %></li>
-            <li><%= link_to "About", about_path, class: "fas fa-question nav-link px-3" %></li>
-            <li><%= link_to "Sign up", new_user_registration_path, class: "fas fa-user-plus nav-link" %></li>
-            <li><%= link_to "Log in", new_user_session_path, class: "fas fa-sign-in-alt nav-link pl-3" %></li>
+            <li><%= link_to "Top", root_path, class: "nav-link px-4", data: {"turbolinks" => false} %></li>
+            <li><%= link_to "About", about_path, class: "nav-link px-4 mx-5" %></li>
+            <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link px-4" %></li>
+            <li><%= link_to "Log in", new_user_session_path, class: "nav-link px-4 ml-5" %></li>
           <% end %>
         </ul>
       </div>
     </div>
   </nav>
+  <%= image_tag 'line.png', class: "w-100" %>
 </header>
