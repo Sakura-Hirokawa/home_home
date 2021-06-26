@@ -23,18 +23,18 @@
   padding: 0;
   box-sizing: border-box;
  }
- 
+
  // フォント
  header,
  main,
  footer {
   font-family: cursive, sans-serif;
  }
- 
+
  a:hover {
   text-decoration: none;
  }
- 
+
  // ヘッダー
  header {
   background: -moz-linear-gradient(top, #FFC778, #FFF);
@@ -181,7 +181,7 @@
  .favorite-btn {
   color: #F9E900;
  }
- 
+
  // ほめホメボタン
  .btn-circle {
   display: inline-block;
@@ -207,7 +207,7 @@
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
  }
- 
+
  .btn-beat {
   color: #fff;
   font-size: 16px;
@@ -218,7 +218,7 @@
   display: inline-block;
   transition: .3s;
  }
- 
+
  .btn-beat:hover {
   animation: pulsation .7s alternate infinite;
  }
@@ -228,7 +228,7 @@
   50% { transform: scale(0.9); }
   100% { transform: scale(1.1); }
  }
- 
+
  // #table tr:hover td {
  //  background-color: #ACDEF7;
  // }

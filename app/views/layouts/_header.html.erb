@@ -10,7 +10,7 @@
             <li class = "nav-text pt-2 pr-5"><%= current_user.name %>さん、今日もえらい！</li>
             <li><%= link_to "Mypage", mypage_path(current_user), class: "nav-link px-4" %></li>
             <li><%= link_to "List", lists_path, class: "nav-link px-4 mx-5" %></li>
-            <li><%= link_to "Calendar", my_calendar_path(current_user), class: "nav-link px-4" %></li>
+            <li><%= link_to "Calendar", my_calendar_path(current_user), class: "nav-link px-4", data: {"turbolinks" => false} %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link px-4 ml-5" %></li>
           <% elsif admin_signed_in? %>
             <li><%= link_to "Users", admin_users_path, class: "nav-link px-4" %></li>
