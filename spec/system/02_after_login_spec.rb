@@ -39,6 +39,42 @@ describe '[STEP2] ユーザログイン後のテスト' do
     end
   end
 
+  describe '自分の投稿画面のテスト' do
+    before do
+      visit new_list_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/lists/new'
+      end
+      it 'date入力フォームが表示される' do
+        expect(page).to have_field 'list[date]'
+      end
+      it 'first_item入力フォームが表示される' do
+        expect(page).to have_field 'list[first_item]'
+      end
+      it '投稿ボタンが表示される' do
+        expect(page).to have_button '投稿'
+      end
+    end
+
+    context '投稿成功のテスト' do
+      before do
+        fill_in 'list[date]', with: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
+        fill_in 'list[first_item]', with: Faker::Lorem.characters(number: 20)
+      end
+
+      it '自分の新しい投稿が正しく保存される' do
+        expect { click_button '投稿' }.to change(user.lists, :count).by(1)
+      end
+      it 'リダイレクト先が、保存できた投稿の詳細画面になっている' do
+        click_button '投稿'
+        expect(current_path).to eq '/lists/' + List.last.id.to_s
+      end
+    end
+  end
+
   describe '投稿一覧画面のテスト' do
     before do
       visit lists_path
@@ -61,21 +97,6 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(page).to have_content other_list.first_item
       end
     end
-
-    context '投稿成功のテスト' do
-      before do
-        fill_in 'list[date]', with: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
-        fill_in 'list[first_item]', with: Faker::Lorem.characters(number: 20)
-      end
-
-      it '自分の新しい投稿が正しく保存される' do
-        expect { click_button '投稿' }.to change(user.lists, :count).by(1)
-      end
-      it 'リダイレクト先が、保存できた投稿の詳細画面になっている' do
-        click_button '投稿'
-        expect(current_path).to eq '/lists/' + List.last.id.to_s
-      end
-    end
   end
 
   describe '自分の投稿詳細画面のテスト' do
@@ -90,9 +111,6 @@ describe '[STEP2] ユーザログイン後のテスト' do
       it 'ユーザ画像・名前のリンク先が正しい' do
         expect(page).to have_link list.user.name, href: mypage_path(list.user)
       end
-      it '投稿のdateが表示される' do
-        expect(page).to have_content list.date
-      end
       it '投稿のfirst_itemが表示される' do
         expect(page).to have_content list.first_item
       end
@@ -101,17 +119,6 @@ describe '[STEP2] ユーザログイン後のテスト' do
       end
       it '投稿の削除リンクが表示される' do
         expect(page).to have_link '削除', href: list_path(list)
-      end
-    end
-
-    context '投稿成功のテスト' do
-      before do
-        fill_in 'list[date]', with: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
-        fill_in 'list[first_item]', with: Faker::Lorem.characters(number: 20)
-      end
-
-      it '自分の新しい投稿が正しく保存される' do
-        expect { click_button '投稿' }.to change(user.lists, :count).by(1)
       end
     end
 
@@ -161,7 +168,6 @@ describe '[STEP2] ユーザログイン後のテスト' do
 
     context '編集成功のテスト' do
       before do
-        @list_old_date = list.date
         @list_old_first_item = list.first_item
         fill_in 'list[date]', with: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
         fill_in 'list[first_item]', with: Faker::Lorem.characters(number: 19)
@@ -169,7 +175,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
       end
 
       it 'dateが正しく更新される' do
-        expect(list.reload.date).not_to eq @list_old_date
+        expect(list.reload.date).not_to eq @list_date
       end
       it 'first_itemが正しく更新される' do
         expect(list.reload.first_item).not_to eq @list_old_first_item

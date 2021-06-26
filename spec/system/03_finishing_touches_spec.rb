@@ -132,12 +132,6 @@ describe '[STEP3] 仕上げのテスト' do
       it '投稿が保存されない' do
         expect { click_button '投稿' }.not_to change(List.all, :count)
       end
-      it '投稿一覧画面を表示している' do
-        click_button '投稿'
-        expect(current_path).to eq '/lists'
-        expect(page).to have_content list.first_item
-        expect(page).to have_content other_list.first_item
-      end
       it '新規投稿フォームの内容が正しい' do
         expect(find_field('list[date]').text).to be_blank
         expect(page).to have_field 'list[first_item]', with: @first_item
@@ -223,9 +217,6 @@ describe '[STEP3] 仕上げのテスト' do
         it 'ユーザ画像・名前のリンク先が正しい' do
           expect(page).to have_link other_list.user.name, href: mypage_path(other_list.user)
         end
-        it '投稿のdateが表示される' do
-          expect(page).to have_content other_list.date
-        end
         it '投稿のfirst_itemが表示される' do
           expect(page).to have_content other_list.first_item
         end
@@ -260,7 +251,7 @@ describe '[STEP3] 仕上げのテスト' do
         it '投稿一覧に他人の投稿のdateが表示され、リンクが正しい' do
           expect(page).to have_link '', href: list_path(other_list)
         end
-        it '投稿一覧に他人の投稿のopinionが表示される' do
+        it '投稿一覧に他人の投稿のfirst_itemが表示される' do
           expect(page).to have_content other_list.first_item
         end
         it '自分の投稿は表示されない' do
