@@ -232,3 +232,19 @@
  // #table tr:hover td {
  //  background-color: #ACDEF7;
  // }
+
+ // ページネーション
+ .pagination {
+  justify-content: center;
+  border: none;
+ }
+
+ .pagination > li > a {
+  border: none;
+  color: #696969;
+ }
+
+ .pagination >li > a:hover {
+  color: red;
+  background-color: red;
+ }
