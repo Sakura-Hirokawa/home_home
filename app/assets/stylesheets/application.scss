@@ -97,26 +97,25 @@
   color : #FDFDFB;
  }
 
-
  // トップスライドショー
  #container{
   height: 500px;
  }
 
  .top1 {
-  background-image: url(top1.jpg);
+  background-image: image-url("top1.jpg");
  }
  .top2 {
-  background-image: url(top2.jpg);
+  background-image: image-url("top2.jpg");
  }
  .top3 {
-  background-image: url(top3.jpg);
+  background-image: image-url("top3.jpg");
  }
  .top4 {
-  background-image: url(top4.jpg);
+  background-image: image-url("top4.jpg");
  }
  .top5 {
-  background-image: url(top5.jpg);
+  background-image: image-url("top5.jpg");
  }
 
  // 管理者トップ画面
