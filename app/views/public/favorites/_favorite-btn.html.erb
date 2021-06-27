@@ -1,7 +1,7 @@
-<div class = "text-center pb-5">
+<div class = "text-center py-5">
   <% if list.favorited_by?(current_user) %>
     <h3><%= link_to "おつかれさまです！えらい！", list_favorites_path(list), method: :delete, remote: true, class: "far fa-grin-squint btn-beat" %></h3>
   <% else %>
-    <%= link_to "ほめホメボタン", list_favorites_path(list), method: :post, remote: true, class: "fas fa-star btn-circle" %>
+    <%= link_to image_tag('home.png'), list_favorites_path(list), method: :post, remote: true, class: "btn-home" %>
   <% end %>
 </div>
