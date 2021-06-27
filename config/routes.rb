@@ -25,13 +25,13 @@ Rails.application.routes.draw do
     root "homes#top"
     get "/about" => "homes#about"
     get "/search" => "searches#search", as: "search"
-    get "/my_calendar" => "events#my_calendar", as: "my_calendar"
+    get "/my_calendar/:id" => "events#my_calendar", as: "my_calendar"
     get "/mypage/:id" => "users#show", as: "mypage"
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"
     patch "/users/:id/withdraw" => "users#withdraw", as: "withdraw"
     get "/lists/done" => "lists#done", as: "done"
     resources :events, only:[:new, :create, :index, :show, :edit, :update, :destroy]
-    resources :users, only:[:edit, :update] do
+    resources :users, only:[:index, :edit, :update] do
       resource :relationships, only:[:create, :destroy]
       get "/relationship/followings" => "relationships#followings", as: "followings"
       get "/relationship/followers" => "relationships#followers", as: "followers"

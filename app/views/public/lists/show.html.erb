@@ -1,7 +1,7 @@
 <div class = "container">
   <div class = "row">
     <div class = "col-sm-12 my-5">
-      <h1 class = "mb-5"><%= @list.user.name %>さんのがんばったこと・達成したこと</h1>
+      <h1 class = "mb-5"><%= @list.user.name %>さんの目標・がんばったこと</h1>
       <p class = "text-primary"><%= flash[:primary] %></p>
       <table class = "table">
         <thead>
@@ -9,6 +9,7 @@
             <th class = "text-center", style = "width: 30%">User</th>
             <th>List</th>
             <th class = "text-center">Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -27,20 +28,21 @@
             </td>
             <td class = "text-center align-middle">
               <% if @list.done %>
-                <p class = "btn btn-warning">達成</p>
+                <%= image_tag 'achieved.png' , size: "130x130" %>
               <% else %>
-                <p class = "btn btn-outline-success">実行中</p>
+                <%= image_tag 'run.png', size: "130x130" %>
+              <% end %>
+            </td>
+            <td class = "btn-list">
+              <% if @list.user == current_user %>
+                <%= link_to "編集", edit_list_path(@list), class: "btn btn-success my-3" %>
+                <%= link_to "削除", list_path(@list), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
               <% end %>
             </td>
           </tr>
         </tbody>
       </table>
-      <div class = "text-center my-5">
-        <% if @list.user == current_user %>
-          <%= link_to "編集", edit_list_path(@list), class: "btn btn-success col-2 mr-5" %>
-          <%= link_to "削除", list_path(@list), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-2" %>
-        <% end %>
-      </div>
+
 
       <!--いいね-->
         <div class = "favorite-btn">
@@ -51,7 +53,7 @@
       <div class = "list_comments">
         <%= render 'public/list_comments/comments', list: @list %>
       </div>
-      
+
       <!--コメントフォーム-->
       <div class = "offset-sm-1 text-center mt-5">
         <%= form_with model:[@list, @list_comment] do |f| %>

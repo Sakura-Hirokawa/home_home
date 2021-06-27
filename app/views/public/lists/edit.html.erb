@@ -1,25 +1,25 @@
 <div class = "container">
   <div class = "row">
     <div class = "col-sm-12 my-5">
-      <h1 class = "mb-5">投稿編集</h1>
+      <h1 class = "mb-5">Post list edit</h1>
       <%= render 'layouts/errors', obj: @list %>
       <table class = "table table-striped mx-auto">
         <tbody>
-          <%= form_with model: @list, local:true do |f| %>
+          <%= form_with model: @list, local: true do |f| %>
           <tr>
             <th><%= f.label :日付選択 %></th>
             <td><%= f.date_field :date %></td>
           </tr>
           <tr>
-            <th><%= f.label:ひとつめ %></th>
+            <th><%= f.label :ひとつめ %></th>
             <td><%= f.text_area :first_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
           </tr>
           <tr>
-            <th><%= f.label:ふたつめ %></th>
+            <th><%= f.label :ふたつめ %></th>
             <td><%= f.text_area :second_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
           </tr>
           <tr>
-            <th><%= f.label:みっつめ %></th>
+            <th><%= f.label :みっつめ %></th>
             <td><%= f.text_area :third_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
           </tr>
           <tr>

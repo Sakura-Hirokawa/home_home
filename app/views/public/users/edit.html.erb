@@ -1,7 +1,7 @@
 <div class = "container">
   <div class = "row">
     <div class = "col-sm-12 my-5">
-      <h1 class = "mb-5">ユーザ情報編集</h1>
+      <h1 class = "mb-5">User Information editing</h1>
       <%= render 'layouts/errors', obj: @user %>
         <table class = "table table-striped">
           <tbody>
@@ -22,7 +22,7 @@
               <th></th>
               <td>
                 <%= f.submit "変更内容を保存", class: "btn btn-primary mr-3" %>
-                <%= link_to "キャンセル", mypage_path(@user), class: "btn btn-outline-info col-2" %>
+                <%= link_to "キャンセル", mypage_path(@user), class: "btn btn-outline-info" %>
               </td>
             </tr>
             <% end %>
