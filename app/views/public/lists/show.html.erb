@@ -9,6 +9,7 @@
             <th class = "text-center", style = "width: 30%">User</th>
             <th>List</th>
             <th class = "text-center">Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -32,15 +33,16 @@
                 <%= image_tag 'run.png', size: "130x130" %>
               <% end %>
             </td>
+            <td class = "btn-list">
+              <% if @list.user == current_user %>
+                <%= link_to "編集", edit_list_path(@list), class: "btn btn-success my-3" %>
+                <%= link_to "削除", list_path(@list), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
+              <% end %>
+            </td>
           </tr>
         </tbody>
       </table>
-      <div class = "text-center my-5">
-        <% if @list.user == current_user %>
-          <%= link_to "編集", edit_list_path(@list), class: "btn btn-success col-2 mr-5" %>
-          <%= link_to "削除", list_path(@list), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-2" %>
-        <% end %>
-      </div>
+
 
       <!--いいね-->
         <div class = "favorite-btn">

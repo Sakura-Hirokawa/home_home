@@ -162,6 +162,12 @@
   width: 30%;
  }
 
+ .what:first-letter,
+ .how > h5:first-letter {
+  font-size: 2em;
+  color: #7172ac;
+ }
+
  .profile_image {
   border-radius: 50%;
  }
@@ -176,6 +182,13 @@
   border-radius: 50%;
  }
 
+ .new_list_img:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  -webkit-box-shadow: 0 2px 0 #e6d900;
+  box-shadow: 0 2px 0 #e6d900;
+ }
+
  // 投稿詳細の項目の行間
  .list {
   line-height: 40px;
@@ -184,6 +197,12 @@
  // 投稿一覧のほめホメカウント
  .favorite-btn {
   color: #F9E900;
+ }
+
+ // 投稿詳細画面編集・削除ボタン
+ .btn-list {
+  display: flex;
+  flex-direction: column;
  }
 
  // ほめホメボタン
