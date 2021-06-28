@@ -1,5 +1,6 @@
 <header>
   <nav class = "navbar navbar-expand-xl navbar-light">
+    <%= image_tag 'logo.png', size: "150x150", class: "navbar-brand ml-5" %>
     <div class = "container">
       <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarNavDropdown" aria-controls = "navbarSupportedContent" aria-expanded = "false" aria-label = "Toggle navigation">
         <span class = "navbar-toggler-icon"></span>
@@ -7,7 +8,7 @@
       <div class = "collapse navbar-collapse" id = "navbarNavDropdown">
         <ul class = "navbar-nav ml-auto my-3">
           <% if user_signed_in? %>
-            <li class = "nav-text pt-2 pr-5">
+            <li class = "nav-text mt-2 mr-5">
               <%= current_user.name %>さん、今日もえらい！
             </li>
             <li>

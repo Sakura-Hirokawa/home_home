@@ -7,23 +7,23 @@
         <tbody>
           <%= form_with model: @list, local: true do |f| %>
           <tr>
-            <th><%= f.label :日付選択 %></th>
+            <th class = "text-center"><%= f.label :日付選択 %></th>
             <td><%= f.date_field :date %></td>
           </tr>
           <tr>
-            <th><%= f.label :ひとつめ %></th>
-            <td><%= f.text_area :first_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
+            <th class = "text-center"><%= f.label :ひとつめ %></th>
+            <td><%= f.text_area :first_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
           </tr>
           <tr>
-            <th><%= f.label :ふたつめ %></th>
-            <td><%= f.text_area :second_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
+            <th class = "text-center"><%= f.label :ふたつめ %></th>
+            <td><%= f.text_area :second_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
           </tr>
           <tr>
-            <th><%= f.label :みっつめ %></th>
-            <td><%= f.text_area :third_item, placeholder: "頑張ったことや達成したこと", class: "form-control" %></td>
+            <th class = "text-center"><%= f.label :みっつめ %></th>
+            <td><%= f.text_area :third_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
           </tr>
           <tr>
-            <th>Status</th>
+            <th class = "text-center">Status</th>
             <td>
               <%= f.radio_button :done, :false %>実行中
               <%= f.radio_button :done, :true %>達成

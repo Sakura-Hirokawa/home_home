@@ -2,6 +2,7 @@
   <div class = "row">
     <div class = "col-sm-12 my-5">
       <h1 class = "mb-5"><%= @list.user.name %>さんの目標・がんばったこと</h1>
+      <p class = "text-success"><%= flash[:success] %></p>
       <p class = "text-primary"><%= flash[:primary] %></p>
       <table class = "table">
         <thead>
@@ -43,13 +44,20 @@
         </tbody>
       </table>
 
-
       <!--いいね-->
+      <div class = "d-flex justify-content-center my-5">
+        <div>
+          <%= image_tag 'list_back.png', size: "250x250" %>
+        </div>
         <div class = "favorite-btn">
           <%= render 'public/favorites/favorite-btn', list: @list %>
         </div>
+        <div>
+          <%= image_tag 'list_back.png', size: "250x250" %>
+        </div>
+      </div>
 
-      <!--コメント-->>
+      <!--コメント-->
       <div class = "list_comments">
         <%= render 'public/list_comments/comments', list: @list %>
       </div>

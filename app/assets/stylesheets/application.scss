@@ -35,26 +35,34 @@
   text-decoration: none;
  }
 
- // ヘッダー
  header {
-  background: -moz-linear-gradient(top, #FFC778, #FFF);
-  background: -webkit-linear-gradient(top, #FFC778, #FFF);
-  background: linear-gradient(to bottom, #FFC778, #FFF);
+  background: -moz-linear-gradient(top, #B08ABA, #FDFDFB);
+  background: -webkit-linear-gradient(top, #B08ABA, #FDFDFB);
+  background: linear-gradient(to bottom, #B08ABA, #FDFDFB);
+ }
+
+ // ヘッダーロゴ
+ .navbar-brand{
+  border-radius: 50%;
+ }
+
+ // ヘッダーユーザ名
+ .nav-text {
+  background: linear-gradient(transparent 40%, #E1D7E6 50%);
  }
 
  // ヘッダーリンク
  .nav-link {
-  color: #E84566;
   font-size: 16px;
+  background-color: #D59F67;
   outline: 1px solid;
-  outline-color: #E84566;
+  outline-color: #8376B5;
   outline-offset: 0px;
   transition: .3s;
  }
 
  .nav-link:hover {
   animation: light .8s infinite;
-  color: #E84566;
  }
 
  @keyframes light {
@@ -64,16 +72,16 @@
   }
  }
 
- // フッター
  footer {
   line-height: 100px;
-  background: -moz-linear-gradient(bottom, #FFC778, #FFF);
-  background: -webkit-linear-gradient(bottom, #FFC778, #FFF);
-  background: linear-gradient(to top, #FFC778, #FFF);
+  background: -moz-linear-gradient(bottom, #B08ABA, #FDFDFB);
+  background: -webkit-linear-gradient(bottom, #B08ABA, #FDFDFB);
+  background: linear-gradient(to top, #B08ABA, #FDFDFB);
  }
 
  main {
   background-color: #FDFDFB;
+  color: #8376B5;
  }
 
  // トップ画面
@@ -87,14 +95,18 @@
 
  .top-text {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
   z-index: 9999;
   height: 100px;
-  line-height: 50px;
+  line-height: 100px;
   color : #FDFDFB;
+ }
+
+ .top-text > div {
+  color: #8376B5;
  }
 
  // トップスライドショー
@@ -118,16 +130,18 @@
   background-image: image-url("top5.jpg");
  }
 
+ .top-area {
+  line-height: 60px;
+ }
+
  // 管理者トップ画面
  .admin_top {
-  background-color: #F3ADCB;
+  background-color: #FDFDFB;
   text-align: center;
  }
 
  // アバウト画面
  .img_wrap{
-  border: 1px solid #ddd;
-  margin: 0 auto;
   overflow: hidden;
  }
 
@@ -142,14 +156,16 @@
  }
 
  // アバウト行間
+ // 投稿詳細行間
  .what,
- .how {
+ .how,
+ .list {
   line-height: 40px;
  }
 
  // How to use 見出し
  .how > h5 {
-  border-bottom: solid 3px skyblue;
+  border-bottom: solid 3px #A5C5E2;
   position: relative;
  }
 
@@ -157,7 +173,7 @@
   position: absolute;
   content: " ";
   display: block;
-  border-bottom: solid 3px #ffc778;
+  border-bottom: solid 3px #86A7CA;
   bottom: -3px;
   width: 30%;
  }
@@ -165,17 +181,18 @@
  .what:first-letter,
  .how > h5:first-letter {
   font-size: 2em;
-  color: #7172ac;
+  color: #E7B39E;
  }
 
  .profile_image {
   border-radius: 50%;
  }
 
+ // 新規投稿へのリンク
  #new_list {
   position: fixed;
   right: 40px;
-  top: 150px;
+  top: 200px;
  }
 
  .new_list_img {
@@ -185,18 +202,19 @@
  .new_list_img:hover {
   -webkit-transform: translate(0, 3px);
   transform: translate(0, 3px);
-  -webkit-box-shadow: 0 2px 0 #e6d900;
-  box-shadow: 0 2px 0 #e6d900;
+  -webkit-box-shadow: 0 2px 0 #E7B39E;
+  box-shadow: 0 2px 0 #E7B39E;
  }
 
- // 投稿詳細の項目の行間
- .list {
-  line-height: 40px;
- }
-
- // 投稿一覧のほめホメカウント
+ // ほめホメカウント
  .favorite-btn {
-  color: #F9E900;
+  color: #A59AC3;
+ }
+
+ // 投稿詳細ほめホメボタン
+ .btn-home > img {
+  height: 250px;
+  border-radius: 50%;
  }
 
  // 投稿詳細画面編集・削除ボタン
@@ -205,44 +223,20 @@
   flex-direction: column;
  }
 
- // ほめホメボタン
- .btn-circle {
-  display: inline-block;
-  text-decoration: none;
-  width: 200px;
-  height: 200px;
-  line-height: 200px;
-  font-size: 23px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
-  transition: .3s;
-  color: red;
-  background-image: linear-gradient(#aeecff 0%, #57c8ff 100%);
- }
-
- .btn-circle:hover {
-  color: red;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
- }
-
+ // ほめホメボタン(お疲れ様)
  .btn-beat {
-  color: #fff;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  background: #333;
-  padding: 18px 30px;
-  border-radius: 6px;
+  color: #FCE2CC;
+  background-color: #B08ABA;
+  padding: 50px;
+  border-radius: 50%;
   display: inline-block;
   transition: .3s;
  }
 
  .btn-beat:hover {
+  color: #FCE2CC;
   animation: pulsation .7s alternate infinite;
  }
 
@@ -252,9 +246,10 @@
   100% { transform: scale(1.1); }
  }
 
- // #table tr:hover td {
- //  background-color: #ACDEF7;
- // }
+ // テーブル
+ .table-hover tr:hover td {
+  background-color: #E1D7E6;
+ }
 
  // ページネーション
  .pagination {
@@ -263,11 +258,11 @@
  }
 
  .pagination > li > a {
+  color: #86A7CA;
   border: none;
-  color: #696969;
  }
 
  .pagination >li > a:hover {
-  color: red;
-  background-color: red;
+  color: #86A7CA;
+  background-color: #E1D7E6;
  }

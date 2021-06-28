@@ -1,28 +1,46 @@
-<div class = "top">
-  <div class = "container">
-    <div class = "row">
-      <div class = "col-sm-12 my-5">
-        <p class = "text-danger"><%= flash[:danger] %></p>
-        <div class = "text-box">
-          <div class = "top-text">
-            <div class = "home_font display-2">ほめホメ</div>
-            <h5>
-              みんな、褒めて、褒められよう。<br />
-              今日もえらい。<br />
-            </h5>
-            <p>#ほめホメ　#home_home</p>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 my-5">
+      <p class = "text-danger"><%= flash[:danger] %></p>
+      <div class = "text-box">
+        <div class = "top-text">
+          <div class = "display-2 font-weight-bold mb-4">
+            ほめホメ
           </div>
-          <div id = "container">
-            <div id = "theTarget">
-              <div class = "top1"></div>
-              <div class = "top2"></div>
-              <div class = "top3"></div>
-              <div class = "top4"></div>
-              <div class = "top5"></div>
-            </div>
+          <h5>
+            みんな、褒めて、褒められよう。<br />
+            今日もえらい。
+          </h5>
+          <p>
+            #ほめホメ　#home_home
+          </p>
+        </div>
+        <div id = "container">
+          <div id = "theTarget">
+            <div class = "top1"></div>
+            <div class = "top2"></div>
+            <div class = "top3"></div>
+            <div class = "top4"></div>
+            <div class = "top5"></div>
           </div>
         </div>
-        <%= image_tag 'logo.png', class: "my-5" %>
+      </div>
+      <div class = "d-flex my-5">
+        <h5 class = "top-area">
+          自分がその日に何をして何を頑張るのかを記録してみよう。<br />
+          その日に達成したことを書き出してみよう。<br />
+          特別な日よりもあたりまえの日が多い暮らしの中で、<br />
+          あたりまえの自分の日常を褒めてみよう。<br />
+          自分の日常を褒める・他者に褒められることで<br />
+          明日を頑張るきっかけに繋がるかもしれない。<br />
+          Hope you enjoy your day. <br >
+          (あなたの一日が楽しいものでありますように。)<br />
+          Here's To You! <br />
+          (あなたに乾杯！)
+        </h5>
+        <div>
+          <%= image_tag 'top_back.png' %>
+        </div>
       </div>
     </div>
   </div>

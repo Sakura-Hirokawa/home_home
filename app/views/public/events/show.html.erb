@@ -8,19 +8,19 @@
       <table class = "table table-striped mb-5">
         <tbody>
           <tr>
-            <th>スケジュール名</th>
+            <th class = "text-center">スケジュール名</th>
             <td><%= @event.title %></td>
           </tr>
           <tr>
-            <th>スケジュール内容</th>
+            <th class = "text-center">スケジュール内容</th>
             <td><%= @event.description %></td>
           </tr>
           <tr>
-            <th>開始日時</th>
+            <th class = "text-center">開始日時</th>
             <td><%= @event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
           </tr>
           <tr>
-            <th>終了日時</th>
+            <th class = "text-center">終了日時</th>
             <td><%= @event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
           </tr>
           <tr>

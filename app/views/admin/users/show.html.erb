@@ -7,19 +7,19 @@
       <table class = "table table-striped">
         <tbody>
           <tr>
-            <th style = "width: 30%">ユーザID</th>
+            <th  class = "text-center", style = "width: 30%">ユーザID</th>
             <td><%= @user.id %></td>
           </tr>
           <tr>
-            <th>名前</th>
+            <th class = "text-center">名前</th>
             <td><%= @user.name %></td>
           </tr>
           <tr>
-            <th>メールアドレス</th>
+            <th class = "text-center">メールアドレス</th>
             <td><%= @user.email %></td>
           </tr>
           <tr>
-            <th>ユーザステータス</th>
+            <th class = "text-center">ステータス</th>
             <td>
               <% if @user.is_deleted %>
                 <p class= "text-secondary">退会</p>
@@ -29,19 +29,19 @@
             </td>
           </tr>
           <tr>
-            <th>自己紹介文</th>
+            <th class = "text-center">自己紹介文</th>
             <td><%= @user.introduction %></td>
           </tr>
           <tr>
-            <th>投稿数</th>
+            <th class = "text-center">投稿数</th>
             <td><%= @user.lists.count %></td>
           </tr>
           <tr>
-            <th>フォロー</th>
+            <th class = "text-center">フォロー</th>
             <td><%=  link_to @user.followings.count, admin_user_followings_path(@user) %></td>
           </tr>
           <tr>
-            <th>フォロワー</th>
+            <th class = "text-center">フォロワー</th>
             <td><%= link_to @user.followers.count, admin_user_followers_path(@user) %></td>
           </tr>
           <tr>

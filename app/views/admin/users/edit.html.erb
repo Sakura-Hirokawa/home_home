@@ -7,19 +7,19 @@
         <tbody>
           <%= form_with model: [:admin, @user], local:true do |f| %>
           <tr>
-            <th>ユーザID</th>
+            <th class = "text-center">ユーザID</th>
             <td><%= @user.id %></td>
           </tr>
           <tr>
-            <th>名前</th>
+            <th class = "text-center">名前</th>
             <td><%= f.text_field :name, class: "form-control" %></td>
           </tr>
           <tr>
-            <th>メールアドレス</th>
+            <th class = "text-center">メールアドレス</th>
             <td><%= f.email_field :email, class: "form-control" %></td>
           </tr>
           <tr>
-            <th>ユーザステータス</th>
+            <th class = "text-center">ステータス</th>
             <td>
               <%= f.radio_button :is_deleted, :false %>有効
               <%= f.radio_button :is_deleted, :true %>退会
