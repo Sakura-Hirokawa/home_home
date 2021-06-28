@@ -36,24 +36,22 @@ class User < ApplicationRecord
 
   # "user"の検索手法
   def self.search_for(content, method)
-    case method
-      # 完全一致
-    when :perfect
+    if method == "perfect"
       User.where(name: content)
       # 前方一致
-    when :forward
-      User.where("name LIKE ?", "#{content}%")
+    elsif method == "forward"
+      User.where("name LIKE ?", content + "%")
       # 後方一致
-    when :backward
-      User.where("name LIKE ?", "%#{content}")
+    elsif method == "backward"
+      User.where("name LIKE ?", "%" + content)
     else
       # 部分一致
-      User.where("name LIKE ?", "%#{content}%")
+      User.where("name LIKE ?", "%" + content + "%")
     end
   end
 
   # 退会ユーザを弾く
   def active_for_authentication?
-    super && (self.is_deleted == false)
+    super && (is_deleted == false)
   end
 end

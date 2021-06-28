@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
   devise_for :admin, controllers: {
-    sessions: "admin/sessions"
+    sessions: "admin/sessions",
   }
 
   devise_for :users, controllers: {
     sessions: "public/sessions",
     passwords: "public/passwords",
-    registrations: "public/registrations"
+    registrations: "public/registrations",
   }
 
   namespace :admin do
     root "homes#top"
     get "/search" => "searches#search", as: "search"
-    resources :users, only:[:index, :show, :edit, :update] do
+    resources :users, only: [:index, :show, :edit, :update] do
       get "/relationship/followings" => "relationships#followings", as: "followings"
       get "/relationship/followers" => "relationships#followers", as: "followers"
     end
-    resources :lists, only:[:show, :edit, :destroy] do
-      resources :list_comments, only:[:destroy]
+    resources :lists, only: [:show, :edit, :destroy] do
+      resources :list_comments, only: [:destroy]
     end
   end
 
@@ -30,16 +30,15 @@ Rails.application.routes.draw do
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"
     patch "/users/:id/withdraw" => "users#withdraw", as: "withdraw"
     get "/lists/done" => "lists#done", as: "done"
-    resources :events, only:[:new, :create, :index, :show, :edit, :update, :destroy]
-    resources :users, only:[:index, :edit, :update] do
-      resource :relationships, only:[:create, :destroy]
+    resources :events, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+    resources :users, only: [:index, :edit, :update] do
+      resource :relationships, only: [:create, :destroy]
       get "/relationship/followings" => "relationships#followings", as: "followings"
       get "/relationship/followers" => "relationships#followers", as: "followers"
     end
     resources :lists do
-      resources :list_comments, only:[:create, :destroy]
-      resource :favorites, only:[:create, :destroy]
+      resources :list_comments, only: [:create, :destroy]
+      resource :favorites, only: [:create, :destroy]
     end
   end
-
 end
