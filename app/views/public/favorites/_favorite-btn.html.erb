@@ -1,4 +1,4 @@
-<div class = "text-center py-5">
+<div class = "text-center py-3">
   <% if list.favorited_by?(current_user) %>
     <h3><%= link_to "おつかれさまです！えらい！", list_favorites_path(list), method: :delete, remote: true, class: "far fa-grin-squint btn-beat" %></h3>
   <% else %>

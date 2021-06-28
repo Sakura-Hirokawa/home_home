@@ -41,6 +41,11 @@
   background: linear-gradient(to bottom, #B08ABA, #FDFDFB);
  }
 
+ // ヘッダーロゴ
+ .navbar-brand{
+  border-radius: 50%;
+ }
+
  // ヘッダーユーザ名
  .nav-text {
   background: linear-gradient(transparent 40%, #E1D7E6 50%);
@@ -179,7 +184,7 @@
  #new_list {
   position: fixed;
   right: 40px;
-  top: 150px;
+  top: 200px;
  }
 
  .new_list_img {
@@ -193,9 +198,15 @@
   box-shadow: 0 2px 0 #E7B39E;
  }
 
- // 投稿一覧のほめホメカウント
+ // ほめホメカウント
  .favorite-btn {
   color: #A59AC3;
+ }
+
+ // 投稿詳細ほめホメボタン
+ .btn-home > img {
+  height: 250px;
+  border-radius: 50%;
  }
 
  // 投稿詳細画面編集・削除ボタン
