@@ -7,15 +7,15 @@
           <tbody>
             <%= form_with model: @user, local:true do |f| %>
             <tr>
-              <th><%= f.label :プロフィール画像 %></th>
+              <th class = "text-center"><%= f.label :プロフィール画像 %></th>
               <td><%= f.attachment_field :profile_image %></td>
             </tr>
             <tr>
-              <th><%= f.label :名前 %></th>
+              <th class = "text-center"><%= f.label :名前 %></th>
               <td><%= f.text_field :name, placeholder: "名前", class: "form-control" %></td>
             </tr>
             <tr>
-              <th><%= f.label :自己紹介 %></th>
+              <th class = "text-center"><%= f.label :自己紹介 %></th>
               <td><%= f.text_area :introduction, placeholder: "自己紹介", class: "form-control" %></td>
             </tr>
             <tr>

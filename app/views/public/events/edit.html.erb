@@ -6,19 +6,19 @@
         <tbody>
           <%= form_with model: @event, url: event_path(@event), local:true do |f| %>
           <tr>
-            <th><%= f.label :スケジュール名 %></th>
+            <th class = "text-center"><%= f.label :スケジュール名 %></th>
             <td><%= f.text_field :title, placeholder: "スケジュール名", class: "form-control" %></td>
           </tr>
           <tr>
-            <th><%= f.label :スケジュール内容 %></th>
+            <th class = "text-center"><%= f.label :スケジュール内容 %></th>
             <td><%= f.text_area :description, placeholder: "スケジュール内容", class: "form-control" %></td>
           </tr>
           <tr>
-            <th><%= f.label :開始日時 %></th>
+            <th class = "text-center"><%= f.label :開始日時 %></th>
             <td><%= f.datetime_field :start_at, class: "form-control" %></td>
           </tr>
           <tr>
-            <th><%= f.label :終了日時 %></th>
+            <th class = "text-center"><%= f.label :終了日時 %></th>
             <td><%= f.datetime_field :end_at, class: "form-control" %></td>
           </tr>
           <tr>
