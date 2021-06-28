@@ -1,61 +1,22 @@
-inherit_from: .rubocop_todo.yml
+inherit_from:
+  - .rubocop_airbnb.yml
 
+#ここにはrubocopでコード解析したくないファイルやフォルダを指定します
 AllCops:
-  # 除外
   Exclude:
-    - 'config.ru'
-    - 'bin/**'
-    - 'lib/**'
     - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
+    - 'bin/*'
+    - 'config/environments/*'
+    - 'config/application.rb'
+    - 'config/initializers/*'
+    - 'config/spring.rb'
+    - 'lib/tasks/*'
     - 'vendor/**/*'
-    - 'tmp/**/*'
-  DisplayCopNames: true
-  # Rubyバージョン指定
-  TargetRubyVersion: 2.6
+    - 'path/ruby'
 
-##################### Style ##################################
-
-# 日本語でのコメントを許可
-Style/AsciiComments:
-  Enabled: false
-
-# モジュール名::クラス名の定義を許可
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-# ドキュメントの無い public class を許可する
-Style/Documentation:
-  Enabled: false
-
-# 桁揃えが綺麗にならないことが多いので migration は除外
-Style/ExtraSpacing:
-  Exclude:
-    - "db/migrate/*.rb"
-
-# 文字列をfreezeするか
-Style/FrozenStringLiteralComment:
-  Enabled: false
-  
-# selfが無くても良い時に省略するか。model内において、ローカル変数とメソッド呼び出しの区別をつけた方が分かりやすい場合が多い
-Style/RedundantSelf:
-  Enabled: false
-
-# ダブルクォートも推奨するか
-Style/StringLiterals:
-  Enabled: false
-
-################### Layout ##################################
-
-# 禁止 160文字
+# 追加
 Layout/LineLength:
   Max: 160
   Exclude:
     - "db/migrate/*.rb"
-
-################### Rails ##################################
-
-#unique index
-Rails/UniqueValidationWithoutIndex:
-  Enabled: false
+    - "app/models/user.rb"

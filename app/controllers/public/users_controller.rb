@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: %i[show edit update unsubscribe withdraw]
-  before_action :ensure_correct_user, only: %i[edit update]
+  before_action :set_user, only: %i(show edit update unsubscribe withdraw)
+  before_action :ensure_correct_user, only: %i(edit update)
 
   def index
     @users = Users.all

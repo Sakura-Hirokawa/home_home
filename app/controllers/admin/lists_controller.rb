@@ -1,6 +1,6 @@
 class Admin::ListsController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_list, only: %i[edit update destroy]
+  before_action :set_list, only: %i(edit update destroy)
 
   def show
     @lists = List.page(params[:page]).reverse_order
