@@ -20,7 +20,8 @@
 * 些細なことでも褒められたい時
 
 ## 設計書
-###アプリケーション詳細設計書
+
+### アプリケーション詳細設計書
 <img width="430" alt="スクリーンショット 2021-06-28 21 24 11" src="https://user-images.githubusercontent.com/80041199/123636769-3605bf00-d858-11eb-806d-1e8f116f21ee.png">
 <img width="432" alt="スクリーンショット 2021-06-28 21 24 16" src="https://user-images.githubusercontent.com/80041199/123636511-ecb56f80-d857-11eb-8ed2-57b2af7e8c14.png">
 
@@ -33,7 +34,9 @@ https://docs.google.com/spreadsheets/d/1pU9hhK1-mNsjeTmnPl-dEk5FnWYqaGQ2dCFJh5pp
 
 ## 管理者用アカウント
 メールアドレス:admin@admin.com
+
 パスワード:admin1111
+
 管理者用ログインURL: /admin/sign_in
 
 ## 使用方法
