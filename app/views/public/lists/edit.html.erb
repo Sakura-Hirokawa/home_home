@@ -3,42 +3,42 @@
     <div class = "col-sm-12 my-5">
       <h1 class = "mb-5">Post list edit</h1>
       <%= render 'layouts/errors', obj: @list %>
-      <table class = "table table-striped mx-auto">
-        <tbody>
-          <%= form_with model: @list, local: true do |f| %>
-          <tr>
-            <th class = "text-center"><%= f.label :日付選択 %></th>
-            <td><%= f.date_field :date %></td>
-          </tr>
-          <tr>
-            <th class = "text-center"><%= f.label :ひとつめ %></th>
-            <td><%= f.text_area :first_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
-          </tr>
-          <tr>
-            <th class = "text-center"><%= f.label :ふたつめ %></th>
-            <td><%= f.text_area :second_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
-          </tr>
-          <tr>
-            <th class = "text-center"><%= f.label :みっつめ %></th>
-            <td><%= f.text_area :third_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
-          </tr>
-          <tr>
-            <th class = "text-center">Status</th>
-            <td>
-              <%= f.radio_button :done, :false %>実行中
-              <%= f.radio_button :done, :true %>達成
-            </td>
-          </tr>
-          <tr>
-            <th></th>
-            <td>
-              <%= f.submit "変更内容を保存", class: "btn btn-primary col-2 mr-3" %>
-              <%= link_to "キャンセル", list_path(@list), class: "btn btn-outline-info col-2" %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <%= form_with model: @list, local: true do |f| %>
+        <table class = "table table-striped mx-auto">
+          <tbody>
+            <tr>
+              <th class = "text-center"><%= f.label :日付選択 %></th>
+              <td><%= f.date_field :date %></td>
+            </tr>
+            <tr>
+              <th class = "text-center"><%= f.label :ひとつめ %></th>
+              <td><%= f.text_area :first_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
+            </tr>
+            <tr>
+              <th class = "text-center"><%= f.label :ふたつめ %></th>
+              <td><%= f.text_area :second_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
+            </tr>
+            <tr>
+              <th class = "text-center"><%= f.label :みっつめ %></th>
+              <td><%= f.text_area :third_item, placeholder: "頑張りたいことや達成したいこと", class: "form-control" %></td>
+            </tr>
+            <tr>
+              <th class = "text-center">Status</th>
+              <td>
+                <%= f.radio_button :done, :false %>実行中
+                <%= f.radio_button :done, :true %>達成
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                <%= f.submit "変更内容を保存", class: "btn btn-primary col-2 mr-3" %>
+                <%= link_to "キャンセル", list_path(@list), class: "btn btn-outline-info col-2" %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>

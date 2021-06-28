@@ -3,9 +3,9 @@
     <div class = "col-sm-12 my-5">
       <h1 class = "mb-5">User Information editing</h1>
       <%= render 'layouts/errors', obj: @user %>
+      <%= form_with model: @user, local:true do |f| %>
         <table class = "table table-striped">
           <tbody>
-            <%= form_with model: @user, local:true do |f| %>
             <tr>
               <th class = "text-center"><%= f.label :プロフィール画像 %></th>
               <td><%= f.attachment_field :profile_image %></td>
@@ -25,14 +25,14 @@
                 <%= link_to "キャンセル", mypage_path(@user), class: "btn btn-outline-info" %>
               </td>
             </tr>
-            <% end %>
           </tbody>
         </table>
-        <div class = "mt-5">
-          <% if user_signed_in? && @user.id == current_user.id %>
-            ※退会する方は<%= link_to "こちら", unsubscribe_path(@user) %>からお願いします。
-          <% end %>
-        </div>
+      <% end %>
+      <div class = "mt-5">
+        <% if user_signed_in? && @user.id == current_user.id %>
+          ※退会する方は<%= link_to "こちら", unsubscribe_path(@user) %>からお願いします。
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
