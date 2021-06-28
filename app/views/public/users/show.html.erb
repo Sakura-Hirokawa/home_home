@@ -6,7 +6,6 @@
       <p class = "text-success"><%= flash[:success] %></p>
       <div class = "d-flex mx-auto">
         <%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.jpg", size: "200x200", class: "profile_image ml-5" %>
-
         <div class = "col-sm-6 m-auto">
           <% if @user == current_user %>
             <%= link_to "編集", edit_user_path(@user), class: "btn btn-success btn-lg col-4" %>
