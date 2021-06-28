@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 describe '[STEP3] 仕上げのテスト' do
@@ -229,8 +230,8 @@ describe '[STEP3] 仕上げのテスト' do
       end
 
       context '他人の投稿編集画面' do
-       it '遷移できず、投稿一覧画面にリダイレクトされる' do
-         visit edit_list_path(other_list)
+        it '遷移できず、投稿一覧画面にリダイレクトされる' do
+          visit edit_list_path(other_list)
           expect(current_path).to eq '/lists'
         end
       end
