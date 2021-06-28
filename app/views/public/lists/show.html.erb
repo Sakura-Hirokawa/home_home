@@ -2,6 +2,7 @@
   <div class = "row">
     <div class = "col-sm-12 my-5">
       <h1 class = "mb-5"><%= @list.user.name %>さんの目標・がんばったこと</h1>
+      <p class = "text-success"><%= flash[:success] %></p>
       <p class = "text-primary"><%= flash[:primary] %></p>
       <table class = "table">
         <thead>
