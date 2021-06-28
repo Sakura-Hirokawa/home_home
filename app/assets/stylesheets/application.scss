@@ -105,6 +105,10 @@
   color : #FDFDFB;
  }
 
+ .top-text > div {
+  color: #8376B5;
+ }
+
  // トップスライドショー
  #container{
   height: 500px;
@@ -124,6 +128,10 @@
  }
  .top5 {
   background-image: image-url("top5.jpg");
+ }
+
+ .top-area {
+  line-height: 60px;
  }
 
  // 管理者トップ画面
