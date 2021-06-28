@@ -26,18 +26,23 @@
 <img width="432" alt="スクリーンショット 2021-06-28 21 24 16" src="https://user-images.githubusercontent.com/80041199/123636511-ecb56f80-d857-11eb-8ed2-57b2af7e8c14.png">
 
 ### ER図
-<img width="878" alt="スクリーンショット 2021-06-28 20 57 43" src="https://user-images.githubusercontent.com/80041199/123636569-fccd4f00-d857-11eb-8702-b1ed342af416.png">
-<img width="879" alt="スクリーンショット 2021-06-28 20 57 33" src="https://user-images.githubusercontent.com/80041199/123636598-06ef4d80-d858-11eb-82a0-28cd7306b62e.png">
+<img width="878" alt="スクリーンショット 2021-06-28 22 14 40" src="https://user-images.githubusercontent.com/80041199/123642576-681a1f80-d85e-11eb-8778-9b1a20b8353f.png">
+<img width="878" alt="スクリーンショット 2021-06-28 22 14 31" src="https://user-images.githubusercontent.com/80041199/123642634-7c5e1c80-d85e-11eb-827e-c079ad5653f9.png">
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1pU9hhK1-mNsjeTmnPl-dEk5FnWYqaGQ2dCFJh5ppjhY/edit?usp=sharing
 
+## ログインユーザ
+メールアドレス：test@test.com
+
+パスワード:test2021
+
 ## 管理者用アカウント
-メールアドレス:admin@admin.com
+メールアドレス：admin@admin.com
 
-パスワード:admin1111
+パスワード：admin1111
 
-管理者用ログインURL: /admin/sign_in
+管理者用ログインURL： /admin/sign_in
 
 ## 使用方法
 ```
