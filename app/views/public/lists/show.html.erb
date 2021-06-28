@@ -43,11 +43,18 @@
         </tbody>
       </table>
 
-
       <!--いいね-->
+      <div class = "d-flex justify-content-center my-5">
+        <div>
+          <%= image_tag 'list_back.png', size: "250x250" %>
+        </div>
         <div class = "favorite-btn">
           <%= render 'public/favorites/favorite-btn', list: @list %>
         </div>
+        <div>
+          <%= image_tag 'list_back.png', size: "250x250" %>
+        </div>
+      </div>
 
       <!--コメント-->
       <div class = "list_comments">
