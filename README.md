@@ -20,6 +20,9 @@
 
 ## 設計書
 
+### 機能一覧
+<img width="428" alt="スクリーンショット 2021-07-01 22 34 10" src="https://user-images.githubusercontent.com/80041199/124133236-97c66300-dabc-11eb-87df-e06e712dcbea.png">
+
 ### アプリケーション詳細設計書
 <img width="430" alt="スクリーンショット 2021-06-28 21 24 11" src="https://user-images.githubusercontent.com/80041199/123636769-3605bf00-d858-11eb-806d-1e8f116f21ee.png">
 <img width="432" alt="スクリーンショット 2021-06-28 21 24 16" src="https://user-images.githubusercontent.com/80041199/123636511-ecb56f80-d857-11eb-8ed2-57b2af7e8c14.png">
@@ -34,7 +37,7 @@ https://docs.google.com/spreadsheets/d/1pU9hhK1-mNsjeTmnPl-dEk5FnWYqaGQ2dCFJh5pp
 ## ログインユーザ
 メールアドレス：test@test.com
 
-パスワード:test2021
+パスワード：test2021
 
 ## 管理者用アカウント
 メールアドレス：admin@admin.com
@@ -57,3 +60,8 @@ $ rails s
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+## 使用素材
+- O-DAN(https://o-dan.net/ja/)
+- Canva(https://www.canva.com/)
+- FREE LINE DESIGN(http://free-line-design.com/)
