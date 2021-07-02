@@ -28,6 +28,9 @@
 <img width="432" alt="スクリーンショット 2021-06-28 21 24 16" src="https://user-images.githubusercontent.com/80041199/123636511-ecb56f80-d857-11eb-8ed2-57b2af7e8c14.png">
 
 ### ER図
+<img width="876" alt="スクリーンショット 2021-07-02 20 04 33" src="https://user-images.githubusercontent.com/80041199/124265557-cd2c8880-db70-11eb-8372-f5386fc84efa.png">
+
+### UIFlows
 <img width="878" alt="スクリーンショット 2021-06-28 22 14 40" src="https://user-images.githubusercontent.com/80041199/123642576-681a1f80-d85e-11eb-8778-9b1a20b8353f.png">
 <img width="878" alt="スクリーンショット 2021-06-28 22 14 31" src="https://user-images.githubusercontent.com/80041199/123642634-7c5e1c80-d85e-11eb-827e-c079ad5653f9.png">
 
